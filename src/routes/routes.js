@@ -1,12 +1,11 @@
-const connection = require('../database/connection')
-const express = require('express')
-const router = express.Router()
-const TaskController = require('../controllers/TaskController')
+const connection = require('../database/connection');
+const express = require('express');
+const router = express.Router();
+const QueryController = require('../controllers/QueryController');
 
-router.get('/clientes', TaskController.listaClientes);
-
-router.get('/pagar', TaskController.listaContasPagar);
-
-router.get('/receber', TaskController.listaContasReceber);
+//Rotas de consultas
+router.get('/clientes', QueryController.listaClientes);
+router.get('/pagar', QueryController.listaContasPagar);
+router.get('/receber', QueryController.listaContasReceber);
 
 module.exports = router;
